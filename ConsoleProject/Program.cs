@@ -24,6 +24,10 @@ namespace ConsoleProject
                         cardNumber = Console.ReadLine();
                         cardNumberInt = Int32.Parse(cardNumber);
 
+                        if (cardNumber == "0") {
+                            break;
+                        }
+
                         Person personID = client.GetPersonById(cardNumberInt);
 
                         if (personID != null)
@@ -67,7 +71,7 @@ namespace ConsoleProject
                                     }
                                     Person person1 = client.GetPersonById(cardNumberInt);
                                     Console.WriteLine($"New balance :  {person1.Balance} ");
-                            break;
+                                    break;
                                 default:
                                     Console.WriteLine("End");
                                     break;
