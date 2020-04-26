@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1db5de37-79ea-44a6-879c-06b2dc2f3763" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51267/ServiceCard.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="ServiceCard.xsd" MetadataType="Schema" ID="f1046625-064d-48f3-ba01-18cb662a76b3" SourceId="1" SourceUrl="http://localhost:51267/ServiceCard.svc?xsd=xsd0" />
+    <MetadataFile FileName="ServiceCard1.xsd" MetadataType="Schema" ID="9e52a94b-4d74-400a-8191-3fb4f7a93d17" SourceId="1" SourceUrl="http://localhost:51267/ServiceCard.svc?xsd=xsd2" />
+    <MetadataFile FileName="ServiceCard.disco" MetadataType="Disco" ID="2c60a9b7-4349-4c55-b55a-93d66b708262" SourceId="1" SourceUrl="http://localhost:51267/ServiceCard.svc?disco" />
+    <MetadataFile FileName="ServiceCard.wsdl" MetadataType="Wsdl" ID="edaed787-ed97-416d-8eb0-8424d6aa261c" SourceId="1" SourceUrl="http://localhost:51267/ServiceCard.svc?wsdl" />
+    <MetadataFile FileName="ServiceCard2.xsd" MetadataType="Schema" ID="f10ce43b-6b5c-428e-854e-b245cd6a85d4" SourceId="1" SourceUrl="http://localhost:51267/ServiceCard.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

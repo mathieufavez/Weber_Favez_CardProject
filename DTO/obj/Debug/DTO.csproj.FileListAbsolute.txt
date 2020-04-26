@@ -1,0 +1,11 @@
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\DTO\bin\Debug\DTO.dll
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\DTO\bin\Debug\DTO.pdb
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\DTO\obj\Debug\DTO.dll
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\DTO\obj\Debug\DTO.pdb
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\Weber_Favez_CardProject\DTO\bin\Debug\DTO.dll
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\Weber_Favez_CardProject\DTO\bin\Debug\DTO.pdb
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\Weber_Favez_CardProject\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\Weber_Favez_CardProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\Weber_Favez_CardProject\DTO\obj\Debug\DTO.dll
+C:\Users\Admin\Documents\HES-SO\S4\IT Service Management\WorkspaceWebService\Weber_Favez_CardProject\DTO\obj\Debug\DTO.pdb
