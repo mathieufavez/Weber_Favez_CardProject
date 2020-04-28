@@ -7,6 +7,12 @@
       <xsd:import schemaLocation="http://localhost:51267/ServiceCard.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DTO" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IServiceCard_GetAllPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPerson" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCard_GetAllPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPersonResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceCard_GetPersonById_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPersonById" />
   </wsdl:message>
@@ -31,7 +37,23 @@
   <wsdl:message name="IServiceCard_PayCafetaria_OutputMessage">
     <wsdl:part name="parameters" element="tns:PayCafetariaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceCard_GetAllPrintType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPrintType" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCard_GetAllPrintType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPrintTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCard_GetPrintTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrintTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCard_GetPrintTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPrintTypeByIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IServiceCard">
+    <wsdl:operation name="GetAllPerson">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCard/GetAllPerson" message="tns:IServiceCard_GetAllPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCard/GetAllPersonResponse" message="tns:IServiceCard_GetAllPerson_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetPersonById">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCard/GetPersonById" message="tns:IServiceCard_GetPersonById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCard/GetPersonByIdResponse" message="tns:IServiceCard_GetPersonById_OutputMessage" />
@@ -48,9 +70,26 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCard/PayCafetaria" message="tns:IServiceCard_PayCafetaria_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCard/PayCafetariaResponse" message="tns:IServiceCard_PayCafetaria_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllPrintType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCard/GetAllPrintType" message="tns:IServiceCard_GetAllPrintType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCard/GetAllPrintTypeResponse" message="tns:IServiceCard_GetAllPrintType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCard/GetPrintTypeById" message="tns:IServiceCard_GetPrintTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCard/GetPrintTypeByIdResponse" message="tns:IServiceCard_GetPrintTypeById_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IServiceCard" type="tns:IServiceCard">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllPerson">
+      <soap:operation soapAction="http://tempuri.org/IServiceCard/GetAllPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetPersonById">
       <soap:operation soapAction="http://tempuri.org/IServiceCard/GetPersonById" style="document" />
       <wsdl:input>
@@ -80,6 +119,24 @@
     </wsdl:operation>
     <wsdl:operation name="PayCafetaria">
       <soap:operation soapAction="http://tempuri.org/IServiceCard/PayCafetaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPrintType">
+      <soap:operation soapAction="http://tempuri.org/IServiceCard/GetAllPrintType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPrintTypeById">
+      <soap:operation soapAction="http://tempuri.org/IServiceCard/GetPrintTypeById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -9,6 +9,7 @@ namespace DAL
 {
     public interface IPersonDB
     {
+        List<Person> GetAllPersons();
         Person GetPersonById(int id);
         Person GetPersonByUsername(string username);
         int UpdatePersonBalance(Person person);

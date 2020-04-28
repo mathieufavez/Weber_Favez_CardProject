@@ -17,6 +17,12 @@ namespace BLL
             PersonDb = personDb;
         }
 
+        public List<Person> GetAllPersons() 
+        {
+            return PersonDb.GetAllPersons();
+        }
+
+
         public Person GetPersonById(int id)
         {
             return PersonDb.GetPersonById(id);
@@ -43,5 +49,7 @@ namespace BLL
                 return 0;
             
         }
+
+
     }
 }

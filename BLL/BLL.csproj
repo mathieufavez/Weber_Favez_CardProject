@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IPersonManager.cs" />
+    <Compile Include="IPrintTypeManager.cs" />
     <Compile Include="PersonManager.cs" />
+    <Compile Include="PrintTypeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

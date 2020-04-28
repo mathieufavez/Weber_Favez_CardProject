@@ -7,6 +7,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using Weber_Favez_CardProject;
 
 namespace WcfServiceWeber_Favez
 {
@@ -14,6 +15,14 @@ namespace WcfServiceWeber_Favez
     // REMARQUE : pour lancer le client test WCF afin de tester ce service, sélectionnez ServiceCard.svc ou ServiceCard.svc.cs dans l'Explorateur de solutions et démarrez le débogage.
     public class ServiceCard : IServiceCard
     {
+
+        public List<Person> GetAllPerson()
+        {
+            IPersonDB personDb = new PersonDB();
+            IPersonManager personManager = new PersonManager(personDb);
+            List<Person> persons= personManager.GetAllPersons();
+            return persons;
+        }
 
         public Person GetPersonById(int id)
         {
@@ -31,17 +40,35 @@ namespace WcfServiceWeber_Favez
             return person;
         }
 
-        public int AddMoneyToCard(int personID, double value ) {
+        public int AddMoneyToCard(int personID, double value ) 
+        {
             IPersonDB personDb = new PersonDB();
             IPersonManager personManager = new PersonManager(personDb);
             return personManager.AddMoneyToCard(personID, value);
         }
 
-        public int PayCafetaria(int personID, double value) {
+        public int PayCafetaria(int personID, double value) 
+        {
             IPersonDB personDb = new PersonDB();
             IPersonManager personManager = new PersonManager(personDb);
             return personManager.PayCafetaria(personID, value);
             
         }
+
+        public List<PrintType> GetAllPrintType() 
+        {
+            IPrintTypeDB printTypeDb = new PrintTypeDB();
+            IPrintTypeManager printTypeManager = new PrintTypeManager(printTypeDb);
+            return printTypeManager.GetAllPrintType();
+        }
+
+        public PrintType GetPrintTypeById(int id) 
+        {
+            IPrintTypeDB printTypeDb = new PrintTypeDB();
+            IPrintTypeManager printTypeManager = new PrintTypeManager(printTypeDb);
+            return printTypeManager.GetPrintTypeById(id);
+        }
+
+
     }
 }

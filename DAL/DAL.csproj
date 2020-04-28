@@ -43,7 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IPersonDB.cs" />
+    <Compile Include="IPrintTypeDB.cs" />
     <Compile Include="PersonDB.cs" />
+    <Compile Include="PrintTypeDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

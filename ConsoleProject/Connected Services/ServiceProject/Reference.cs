@@ -15,6 +15,12 @@ namespace ConsoleProject.ServiceProject {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceProject.IServiceCard")]
     public interface IServiceCard {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/GetAllPerson", ReplyAction="http://tempuri.org/IServiceCard/GetAllPersonResponse")]
+        DTO.Person[] GetAllPerson();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/GetAllPerson", ReplyAction="http://tempuri.org/IServiceCard/GetAllPersonResponse")]
+        System.Threading.Tasks.Task<DTO.Person[]> GetAllPersonAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/GetPersonById", ReplyAction="http://tempuri.org/IServiceCard/GetPersonByIdResponse")]
         DTO.Person GetPersonById(int id);
         
@@ -38,6 +44,18 @@ namespace ConsoleProject.ServiceProject {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/PayCafetaria", ReplyAction="http://tempuri.org/IServiceCard/PayCafetariaResponse")]
         System.Threading.Tasks.Task<int> PayCafetariaAsync(int personID, double value);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/GetAllPrintType", ReplyAction="http://tempuri.org/IServiceCard/GetAllPrintTypeResponse")]
+        DTO.PrintType[] GetAllPrintType();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/GetAllPrintType", ReplyAction="http://tempuri.org/IServiceCard/GetAllPrintTypeResponse")]
+        System.Threading.Tasks.Task<DTO.PrintType[]> GetAllPrintTypeAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/GetPrintTypeById", ReplyAction="http://tempuri.org/IServiceCard/GetPrintTypeByIdResponse")]
+        DTO.PrintType GetPrintTypeById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/GetPrintTypeById", ReplyAction="http://tempuri.org/IServiceCard/GetPrintTypeByIdResponse")]
+        System.Threading.Tasks.Task<DTO.PrintType> GetPrintTypeByIdAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -65,6 +83,14 @@ namespace ConsoleProject.ServiceProject {
         
         public ServiceCardClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public DTO.Person[] GetAllPerson() {
+            return base.Channel.GetAllPerson();
+        }
+        
+        public System.Threading.Tasks.Task<DTO.Person[]> GetAllPersonAsync() {
+            return base.Channel.GetAllPersonAsync();
         }
         
         public DTO.Person GetPersonById(int id) {
@@ -97,6 +123,22 @@ namespace ConsoleProject.ServiceProject {
         
         public System.Threading.Tasks.Task<int> PayCafetariaAsync(int personID, double value) {
             return base.Channel.PayCafetariaAsync(personID, value);
+        }
+        
+        public DTO.PrintType[] GetAllPrintType() {
+            return base.Channel.GetAllPrintType();
+        }
+        
+        public System.Threading.Tasks.Task<DTO.PrintType[]> GetAllPrintTypeAsync() {
+            return base.Channel.GetAllPrintTypeAsync();
+        }
+        
+        public DTO.PrintType GetPrintTypeById(int id) {
+            return base.Channel.GetPrintTypeById(id);
+        }
+        
+        public System.Threading.Tasks.Task<DTO.PrintType> GetPrintTypeByIdAsync(int id) {
+            return base.Channel.GetPrintTypeByIdAsync(id);
         }
     }
 }

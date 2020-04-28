@@ -66,6 +66,7 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\DataSources\DTO.Person.datasource" />
+    <None Include="Properties\DataSources\DTO.PrintType.datasource" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

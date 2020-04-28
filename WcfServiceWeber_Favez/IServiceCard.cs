@@ -12,6 +12,10 @@ namespace WcfServiceWeber_Favez
     [ServiceContract]
     public interface IServiceCard
     {
+
+        [OperationContract]
+        List<Person> GetAllPerson();
+
         [OperationContract]
         Person GetPersonById(int id);
 
@@ -23,5 +27,12 @@ namespace WcfServiceWeber_Favez
 
         [OperationContract]
         int PayCafetaria(int personID, double value);
+
+        [OperationContract]
+        List<PrintType> GetAllPrintType();
+
+        [OperationContract]
+        PrintType GetPrintTypeById(int id);
+
     }
 }

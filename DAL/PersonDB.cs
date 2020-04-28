@@ -17,6 +17,49 @@ namespace DAL
             connectionString = ConfigurationManager.ConnectionStrings["DemoDB"].ConnectionString;
         }
 
+        public List<Person> GetAllPersons()
+        {
+            List<Person> results = new List<Person>();
+
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(connectionString))
+                {
+                    string query = "SELECT * FROM Person;";
+                    SqlCommand cmd = new SqlCommand(query, cn);
+
+                    cn.Open();
+
+                    using (SqlDataReader dr = cmd.ExecuteReader())
+                    {
+                        while (dr.Read())
+                        {
+                            if (results == null)
+                                results = new List<Person>();
+
+                            Person person = new Person();
+
+                            person.Id = (int)dr["IdPerson"];
+                            person.FirstName = (string)dr["FirstName"];
+                            person.LastName = (string)dr["LastName"];
+                            person.Username = (string)dr["Username"];
+                            person.Balance = (double)dr["Balance"];
+
+
+
+                            results.Add(person);
+                        }
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+            return results;
+        }
+
         public Person GetPersonById(int id)
         {
             Person result = null;
