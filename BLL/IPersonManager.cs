@@ -14,5 +14,6 @@ namespace BLL
         Person GetPersonByUsername(string username);
         int AddMoneyToCard(int id, double value);
         int PayCafetaria(int id, double value);
+        int Print(int printTypeID, int personID, int numberOfCopies);
     }
 }

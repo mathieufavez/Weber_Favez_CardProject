@@ -37,6 +37,12 @@
   <wsdl:message name="IServiceCard_PayCafetaria_OutputMessage">
     <wsdl:part name="parameters" element="tns:PayCafetariaResponse" />
   </wsdl:message>
+  <wsdl:message name="IServiceCard_Print_InputMessage">
+    <wsdl:part name="parameters" element="tns:Print" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCard_Print_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PrintResponse" />
+  </wsdl:message>
   <wsdl:message name="IServiceCard_GetAllPrintType_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllPrintType" />
   </wsdl:message>
@@ -69,6 +75,10 @@
     <wsdl:operation name="PayCafetaria">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCard/PayCafetaria" message="tns:IServiceCard_PayCafetaria_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IServiceCard/PayCafetariaResponse" message="tns:IServiceCard_PayCafetaria_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <wsdl:input wsaw:Action="http://tempuri.org/IServiceCard/Print" message="tns:IServiceCard_Print_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IServiceCard/PrintResponse" message="tns:IServiceCard_Print_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetAllPrintType">
       <wsdl:input wsaw:Action="http://tempuri.org/IServiceCard/GetAllPrintType" message="tns:IServiceCard_GetAllPrintType_InputMessage" />
@@ -119,6 +129,15 @@
     </wsdl:operation>
     <wsdl:operation name="PayCafetaria">
       <soap:operation soapAction="http://tempuri.org/IServiceCard/PayCafetaria" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Print">
+      <soap:operation soapAction="http://tempuri.org/IServiceCard/Print" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

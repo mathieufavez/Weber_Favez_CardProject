@@ -19,7 +19,8 @@ namespace WcfServiceWeber_Favez
         public List<Person> GetAllPerson()
         {
             IPersonDB personDb = new PersonDB();
-            IPersonManager personManager = new PersonManager(personDb);
+            IPrintTypeDB printTypeDb = new PrintTypeDB();
+            IPersonManager personManager = new PersonManager(personDb, printTypeDb);
             List<Person> persons= personManager.GetAllPersons();
             return persons;
         }
@@ -27,7 +28,8 @@ namespace WcfServiceWeber_Favez
         public Person GetPersonById(int id)
         {
             IPersonDB personDb = new PersonDB();
-            IPersonManager personManager = new PersonManager(personDb);
+            IPrintTypeDB printTypeDb = new PrintTypeDB();
+            IPersonManager personManager = new PersonManager(personDb, printTypeDb);
             Person person = personManager.GetPersonById(id);
             return person;
         }
@@ -35,7 +37,8 @@ namespace WcfServiceWeber_Favez
         public Person GetPersonByUsername(string username)
         {
             IPersonDB personDb = new PersonDB();
-            IPersonManager personManager = new PersonManager(personDb);
+            IPrintTypeDB printTypeDb = new PrintTypeDB();
+            IPersonManager personManager = new PersonManager(personDb, printTypeDb);
             Person person = personManager.GetPersonByUsername(username);
             return person;
         }
@@ -43,16 +46,26 @@ namespace WcfServiceWeber_Favez
         public int AddMoneyToCard(int personID, double value ) 
         {
             IPersonDB personDb = new PersonDB();
-            IPersonManager personManager = new PersonManager(personDb);
+            IPrintTypeDB printTypeDb = new PrintTypeDB();
+            IPersonManager personManager = new PersonManager(personDb, printTypeDb);
             return personManager.AddMoneyToCard(personID, value);
         }
 
         public int PayCafetaria(int personID, double value) 
         {
             IPersonDB personDb = new PersonDB();
-            IPersonManager personManager = new PersonManager(personDb);
+            IPrintTypeDB printTypeDb = new PrintTypeDB();
+            IPersonManager personManager = new PersonManager(personDb, printTypeDb);
             return personManager.PayCafetaria(personID, value);
             
+        }
+
+        public int Print(int printTypeID, int personID, int numberOfCopies) 
+        {
+            IPersonDB personDb = new PersonDB();
+            IPrintTypeDB printTypeDb = new PrintTypeDB();
+            IPersonManager personManager = new PersonManager(personDb, printTypeDb);
+            return personManager.Print(printTypeID, personID, numberOfCopies);
         }
 
         public List<PrintType> GetAllPrintType() 

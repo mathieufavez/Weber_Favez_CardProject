@@ -29,10 +29,14 @@ namespace WcfServiceWeber_Favez
         int PayCafetaria(int personID, double value);
 
         [OperationContract]
+        int Print(int printTypeID, int personID, int numberOfCopies);
+
+        [OperationContract]
         List<PrintType> GetAllPrintType();
 
         [OperationContract]
         PrintType GetPrintTypeById(int id);
+
 
     }
 }

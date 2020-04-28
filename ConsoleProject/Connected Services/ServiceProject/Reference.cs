@@ -45,6 +45,12 @@ namespace ConsoleProject.ServiceProject {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/PayCafetaria", ReplyAction="http://tempuri.org/IServiceCard/PayCafetariaResponse")]
         System.Threading.Tasks.Task<int> PayCafetariaAsync(int personID, double value);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/Print", ReplyAction="http://tempuri.org/IServiceCard/PrintResponse")]
+        int Print(int printTypeID, int personID, int numberOfCopies);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/Print", ReplyAction="http://tempuri.org/IServiceCard/PrintResponse")]
+        System.Threading.Tasks.Task<int> PrintAsync(int printTypeID, int personID, int numberOfCopies);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServiceCard/GetAllPrintType", ReplyAction="http://tempuri.org/IServiceCard/GetAllPrintTypeResponse")]
         DTO.PrintType[] GetAllPrintType();
         
@@ -123,6 +129,14 @@ namespace ConsoleProject.ServiceProject {
         
         public System.Threading.Tasks.Task<int> PayCafetariaAsync(int personID, double value) {
             return base.Channel.PayCafetariaAsync(personID, value);
+        }
+        
+        public int Print(int printTypeID, int personID, int numberOfCopies) {
+            return base.Channel.Print(printTypeID, personID, numberOfCopies);
+        }
+        
+        public System.Threading.Tasks.Task<int> PrintAsync(int printTypeID, int personID, int numberOfCopies) {
+            return base.Channel.PrintAsync(printTypeID, personID, numberOfCopies);
         }
         
         public DTO.PrintType[] GetAllPrintType() {
